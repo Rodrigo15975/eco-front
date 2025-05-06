@@ -1,5 +1,3 @@
-import type React from 'react'
-import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
@@ -9,7 +7,9 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Check } from 'lucide-react'
-
+import { FaWhatsapp } from 'react-icons/fa'
+import { Button } from '../ui/button'
+import { configContacts } from '@/config/details'
 interface ServiceProps {
   service: {
     id: number
@@ -22,6 +22,20 @@ interface ServiceProps {
 }
 
 export function ServiceCard({ service }: ServiceProps) {
+  const handleSendMessage = () => {
+    const phoneNumber = configContacts.whatsappContact
+    const message = `Hola, me gustaria saber mas sobre el servicio ${
+      service.title
+    }.
+    Detalles: ${service.features.join('\n')}
+    `
+
+    const encodedMessage = encodeURIComponent(message)
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+
+    window.open(whatsappURL, '_blank')
+  }
+
   return (
     <Card className="flex flex-col h-full overflow-hidden transition-all hover:shadow-lg">
       <CardHeader
@@ -44,7 +58,13 @@ export function ServiceCard({ service }: ServiceProps) {
         </ul>
       </CardContent>
       <CardFooter className="p-6 pt-0">
-        <Button className="w-full">Solicitar Servicio</Button>
+        <Button
+          className="w-full bg-[#25D366] text-white hover:bg-[#25D366]/90"
+          onClick={handleSendMessage}
+        >
+          <FaWhatsapp />
+          Solicitar Servicio
+        </Button>
       </CardFooter>
     </Card>
   )
