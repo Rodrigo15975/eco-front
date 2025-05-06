@@ -35,19 +35,7 @@ const DetailsOneProduct = ({ id }: { id: string | undefined }) => {
     if (itemToProduct && itemToProduct.id) {
       toast.success('Agregado al carrito', {
         duration: 2000,
-        description: (
-          <>
-            <>
-              <p>Product added to cart successfully</p>
-              <Link
-                className="underline text-blue-400 mt-8 underline-offset-2"
-                href={'/products'}
-              >
-                Show cart
-              </Link>
-            </>
-          </>
-        ),
+        id: 'added-to-cart',
       })
 
       addItem({
@@ -70,7 +58,7 @@ const DetailsOneProduct = ({ id }: { id: string | undefined }) => {
 
         <div className="grid gap-12 md:grid-cols-2">
           {/* Left: Product Images */}
-          <div className="space-y-4">
+          <div className="space-y-4 mr-auto">
             <div className="relative aspect-square overflow-hidden rounded-2xl bg-gray-100 shadow-md">
               <Image
                 src={
@@ -100,8 +88,9 @@ const DetailsOneProduct = ({ id }: { id: string | undefined }) => {
                       <Image
                         src={variant.url}
                         alt={`${product.name} - ${variant.id}`}
-                        fill
                         priority
+                        width={300}
+                        height={300}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover"
                       />
@@ -151,7 +140,7 @@ const DetailsOneProduct = ({ id }: { id: string | undefined }) => {
 
             <Button
               onClick={() => handleAddToCart(product)}
-              className="w-full py-6 text-lg font-semibold"
+              className="w-[300px] py-6 h-[50px] font-semibold"
             >
               Add to Cart
             </Button>
