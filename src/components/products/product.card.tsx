@@ -51,10 +51,13 @@ export default function ProductCard({
         }`}
       >
         {/* Product info */}
-        <div className="space-y-3">
+        <div className="space-y-3 ">
           {/* Product name */}
           <div>
-            <Badge variant="outline" className="mb-1 font-normal text-gray-500">
+            <Badge
+              variant="outline"
+              className="mb-1 font-normal text-gray-500 max-w-[300px] line-clamp-1 truncate whitespace-nowrap"
+            >
               {product.name}
             </Badge>
             <h3 className="line-clamp-1 text-sm font-medium text-gray-900">
