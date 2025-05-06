@@ -53,19 +53,19 @@ export function Navbar() {
                   Bienvenido
                 </SheetDescription>
               </SheetHeader>
-              <nav className="flex flex-col gap-4">
+              <nav className="flex flex-col px-8 gap-4">
                 <MobileNavLink
-                  href="/productos"
+                  href="/"
                   label="Productos"
                   closeMenu={() => setIsMenuOpen(false)}
                 />
                 <MobileNavLink
-                  href="/servicios"
+                  href="/services"
                   label="Servicios"
                   closeMenu={() => setIsMenuOpen(false)}
                 />
                 <MobileNavLink
-                  href="/contacto"
+                  href="/contact"
                   label="Contacto"
                   closeMenu={() => setIsMenuOpen(false)}
                 />
@@ -110,7 +110,7 @@ function MobileNavLink({
   return (
     <Link
       href={href}
-      className="text-base font-medium text-blue-900 hover:underline"
+      className="text-base font-medium text-primary  hover:underline"
       onClick={closeMenu}
     >
       {label}
