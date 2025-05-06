@@ -1,3 +1,4 @@
+'use client'
 import { ServiceCard } from '@/components/services/service.card'
 import { Camera, ImageIcon } from 'lucide-react'
 import Image from 'next/image'
@@ -6,24 +7,23 @@ const Page = () => {
   const services = [
     {
       id: 1,
-      title: 'Servicios Fotográficos',
+      title: 'Instalación',
       description:
-        'Sesiones fotográficas profesionales para eventos, retratos, productos y más. Nuestro equipo de fotógrafos expertos captura momentos únicos con la más alta calidad.',
+        'En Cibernetics Core, nos especializamos en brindar la mejor instalación profesional de cámaras de seguridad para hogares, negocios y oficinas. No solo colocamos cámaras, te brindamos tranquilidad, control y confianza las 24 horas del día.',
       features: [
-        'Fotografía de eventos',
-        'Retratos profesionales',
-        'Fotografía de productos',
-        'Edición y retoque',
-        'Impresión de alta calidad',
+        'Instalación rápida y sin complicaciones',
+        'Monitoreo desde tu celular o computadora',
+        'Protección garantizada y asesoría postventa',
+        'Técnicos certificados y con experiencia comprobada',
       ],
       icon: <ImageIcon className="h-10 w-10 text-gray-900" />,
       color: 'bg-blue-50',
     },
     {
       id: 2,
-      title: 'Servicios Técnicos de Cámaras',
+      title: 'Mantenimiento',
       description:
-        'Mantenimiento, reparación y venta de equipos fotográficos. Contamos con técnicos certificados y las herramientas adecuadas para mantener tu equipo en óptimas condiciones.',
+        'Mantenimiento, reparación y venta de equipos. Contamos con técnicos certificados y las herramientas adecuadas para mantener tu equipo en óptimas condiciones.',
       features: [
         'Limpieza de sensores',
         'Reparación de lentes',
@@ -61,8 +61,10 @@ const Page = () => {
                 Nuestros Servicios
               </h2>
               <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Descubre nuestra amplia gama de servicios diseñados para
-                satisfacer todas tus necesidades fotográficas.
+                Contamos con un equipo altamente capacitado que se asegura de
+                que cada instalación sea precisa, discreta y eficiente,
+                utilizando tecnología de punta, con equipos HD, visión nocturna,
+                acceso remoto desde tu celular y grabación continua.
               </p>
             </div>
           </div>
