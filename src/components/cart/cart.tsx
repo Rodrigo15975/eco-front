@@ -10,6 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
+import { configContacts } from '@/config/details'
 import { useCartStore } from '@/stores/useCartStore'
 import { Minus, Plus, ShoppingCart, Trash } from 'lucide-react'
 import Image from 'next/image'
@@ -71,17 +72,21 @@ export function CartItems() {
   }
 
   const handleSendMessage = () => {
-    const phone = '51931022090'
+    const phone = configContacts.whatsappContact
     const lineBreak = '\n'
 
     const productLines = items
       .map((item, index) => {
         const name = item.name
         const quantity = item.quantity_buy
+        const price = item.price
         const image = item.ProductsImgs[0]?.url || 'No disponible'
+        const description = item.description
         return `${
           index + 1
-        }. Producto: ${name}${lineBreak}Cantidad: ${quantity}${lineBreak}Imagen: ${image}`
+        }. Producto: ${name}${lineBreak}Cantidad: ${quantity} ${lineBreak}Precio unitario: ${price.toFixed(
+          2
+        )}${lineBreak}Imagen: ${image}${lineBreak}Descripción: ${description}`
       })
       .join(lineBreak + lineBreak)
 
@@ -122,6 +127,7 @@ export function CartItems() {
               <p className="text-sm text-muted-foreground">
                 Precio unitario: ${item.price.toFixed(2)}
               </p>
+
               <p className="text-sm text-muted-foreground">
                 Cantidad: {item.quantity_buy}
               </p>
