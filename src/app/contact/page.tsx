@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+import { config } from '@/config/config'
 import { LocateIcon, PhoneCallIcon, SquareSigma } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -18,7 +19,7 @@ const redes = [
   {
     icon: <PhoneCallIcon />,
     title: 'Numero celular',
-    text: '+51 932548759',
+    text: config.whatssapNumber,
   },
   {
     icon: <SquareSigma />,
@@ -34,7 +35,6 @@ const icons = [
   },
 ]
 const Contact = () => {
-  const whatsappNumber = '51931022090'
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -56,7 +56,7 @@ const Contact = () => {
     const message = `Hola, soy ${form.name}. Mi correo es ${form.email} y mi teléfono es ${form.phone}. Mensaje: ${form.message}`
 
     const encodedMessage = encodeURIComponent(message)
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
+    const whatsappURL = `https://wa.me/${config.whatsappContact}?text=${encodedMessage}`
 
     window.open(whatsappURL, '_blank')
     setForm({
@@ -75,7 +75,7 @@ const Contact = () => {
     const message = `Hola, necesito información sobre tus servicios. `
 
     const encodedMessage = encodeURIComponent(message)
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
+    const whatsappURL = `https://wa.me/${config.whatsappContact}?text=${encodedMessage}`
 
     window.open(whatsappURL, '_blank')
     toast.success('Mensaje enviado con exito', {
