@@ -55,8 +55,8 @@ export default function ProductCard({
           {/* Product name */}
           <div>
             <Badge
-              variant="outline"
-              className="mb-1 font-normal text-gray-500 max-w-[300px] line-clamp-1 truncate whitespace-nowrap"
+              variant="default"
+              className="mb-1 text-xl text-white  font-bold max-w-[300px] line-clamp-1 truncate whitespace-nowrap"
             >
               {product.name}
             </Badge>
@@ -79,7 +79,7 @@ export default function ProductCard({
         {/* Price and action */}
         <div className="mt-4 flex items-center justify-between">
           <span className="text-lg font-semibold text-gray-900">
-            ${Number(product.price).toFixed(2)}
+            S/{Number(product.price).toFixed(2)}
           </span>
           <div className="flex items-center gap-2">
             <Link href={`/products/${product.id}`}>
