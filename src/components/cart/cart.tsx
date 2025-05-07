@@ -31,7 +31,7 @@ export function ShoppingCartButton() {
           className="relative text-white bg-blue-500 hover:text-primary-foreground"
         >
           <ShoppingCart className="h-5 w-5" />
-          <span className="ml-2">${total.toFixed(2)}</span>
+          <span className="ml-2">S/{total.toFixed(2)}</span>
           {itemCount > 0 && (
             <Badge
               variant="destructive"
@@ -177,7 +177,7 @@ export function CartItems() {
       <div className="border-t mt-2 px-4 py-4 bg-white shadow-md">
         <div className="flex justify-between mb-4 text-lg font-semibold">
           <span>Total</span>
-          <span>${total.toFixed(2)}</span>
+          <span>S/{total.toFixed(2)}</span>
         </div>
         <Button
           onClick={handleSendMessage}

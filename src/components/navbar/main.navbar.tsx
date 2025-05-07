@@ -13,6 +13,7 @@ import { Menu } from 'lucide-react'
 import Link from 'next/link'
 import { ShoppingCartButton } from '../cart/cart'
 import { useState } from 'react'
+import Image from 'next/image'
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -22,6 +23,7 @@ export function Navbar() {
       <div className="container flex h-16 items-center mx-auto justify-between px-4 md:px-6">
         {/* Logo y navegación */}
         <div className="flex items-center space-x-16">
+          <Image src="/logo.jpg" alt="Logo" width={40} height={40} />
           <Link href="/" className="flex items-center space-x-2">
             <span className="text-2xl font-extrabold tracking-tight">
               Cibernetics Core
