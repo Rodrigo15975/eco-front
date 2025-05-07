@@ -1,5 +1,5 @@
 'use client'
-
+import { SiGooglemaps } from 'react-icons/si'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -10,11 +10,14 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { FaFacebookF, FaWhatsapp } from 'react-icons/fa'
 import { toast } from 'sonner'
+
 const redes = [
   {
     icon: <LocateIcon />,
     title: 'Location',
-    text: 'Av. Los Olivos 1234 - Lima - Peru',
+    text: 'Los Jazmines mz M lte 19, Ate 15494',
+    link: 'https://maps.app.goo.gl/1ZaKxiaBfcE2zyx59',
+    linkIcon: <SiGooglemaps />,
   },
   {
     icon: <PhoneCallIcon />,
@@ -68,6 +71,12 @@ const Contact = () => {
     toast.success('Mensaje enviado con exito', {
       position: 'top-center',
       duration: 2000,
+    })
+    setForm({
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
     })
   }
 
@@ -127,6 +136,18 @@ const Contact = () => {
                   <div>
                     <p className="font-medium">{item.title}</p>
                     <p className="text-muted-foreground">{item.text}</p>
+                    {item.link && (
+                      <div className="flex gap-2 items-center">
+                        {item.linkIcon}
+                        <a
+                          href="https://maps.app.goo.gl/1ZaKxiaBfcE2zyx59"
+                          target="_blank"
+                          className="underline text-primary underline-offset-2"
+                        >
+                          Nuestra dirección
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
