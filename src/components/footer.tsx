@@ -1,3 +1,6 @@
+'use client'
+
+import Link from 'next/link'
 import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 export default function Footer() {
@@ -18,24 +21,19 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-4">Enlaces</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:text-white transition">
+                <Link href="/" className="hover:text-white transition">
                   Inicio
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
+                <Link href="/" className="hover:text-white transition">
                   Productos
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
-                  Acerca de
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition">
+                <Link href="/contact" className="hover:text-white transition">
                   Contacto
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -45,7 +43,8 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-4">Síguenos</h3>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/cyb3rn3ticsCor3/"
+                target="_blank"
                 className="hover:text-white transition"
                 aria-label="Facebook"
               >

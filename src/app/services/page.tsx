@@ -1,8 +1,8 @@
 'use client'
 import { ServiceCard } from '@/components/services/service.card'
-import { Camera, ImageIcon } from 'lucide-react'
 import Image from 'next/image'
-
+import { GrConfigure, } from 'react-icons/gr'
+import { GrDocumentConfig } from "react-icons/gr";
 const Page = () => {
   const services = [
     {
@@ -16,7 +16,7 @@ const Page = () => {
         'Protección garantizada y asesoría postventa',
         'Técnicos certificados y con experiencia comprobada',
       ],
-      icon: <ImageIcon className="h-10 w-10 text-gray-900" />,
+      icon: <GrDocumentConfig  className="h-10 w-10 text-gray-900" />,
       color: 'bg-blue-50',
     },
     {
@@ -31,7 +31,7 @@ const Page = () => {
         'Actualización de firmware',
         'Asesoría en compra de equipos',
       ],
-      icon: <Camera className="h-10 w-10 text-gray-900" />,
+      icon: <GrConfigure className="h-10 w-10 text-gray-900" />,
       color: 'bg-amber-50',
     },
   ]
